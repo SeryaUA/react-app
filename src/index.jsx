@@ -11,7 +11,7 @@ import Button from "./Button";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function NewApp() {
-  return <h1>Hello React!!</h1>;
+  return <h1>Hello React</h1>;
 }
 
 root.render(
