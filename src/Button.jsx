@@ -3,10 +3,6 @@ import React, { useState } from "react";
 function Button({ children, click }) {
   const [isPressed, setIsPressed] = useState(true);
 
-  // const handleClick = () => {
-  //   setIsPressed(!isPressed);
-  // };
-
   const buttonStyle = {
     backgroundColor: isPressed ? "green" : "red",
     color: "white",
