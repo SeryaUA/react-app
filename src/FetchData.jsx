@@ -62,24 +62,21 @@ import { Breeds, ChangebreadNumbers } from "./Changebread";
 
 const FetchData = () => {
   const [selectedBreed, setSelectedBreed] = useState(
-    "https://dog.ceo/api/breeds/image/random/3"
+    "https://dog.ceo/api/breeds/image/random/5"
   );
 
   const [valueBreed, setValueBreed] = useState("");
+  const [breadNumber, setBreadNumber] = useState(5);
 
   const handleBreedChange = (value) => {
     setSelectedBreed(
       `https://dog.ceo/api/breed/${value.toLowerCase()}/images/random/${breadNumber}`
     );
-    setValueBreed(value); // Оновлення значення породи
+    setValueBreed(value);
   };
 
-  const [breadNumber, setBreadNumber] = useState(5);
-
   const handleBreedChangeNumbers = (value) => {
-    console.log(value);
     setBreadNumber(value);
-    breadNumber(value);
   };
 
   const { data, error, isLoading } = useSWR(
@@ -102,7 +99,9 @@ const FetchData = () => {
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
-  let imgList = Array.isArray(data.message) ? data.message : [data.message];
+
+  let imgList = data.message;
+
   return (
     <>
       <div>

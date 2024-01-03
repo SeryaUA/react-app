@@ -42,7 +42,7 @@ const Breeds = ({ onChange, value }) => {
   );
 };
 
-const ChangebreadNumbers = ({ onChange }) => {
+const ChangebreadNumbers = ({ onChange, value }) => {
   const BreadNumbers = (event) => {
     const selectedValue = event.target.value;
     console.log(selectedValue);
@@ -56,7 +56,7 @@ const ChangebreadNumbers = ({ onChange }) => {
         type="number"
         id="breadNumbers"
         onChange={BreadNumbers}
-        defaultValue="5"
+        defaultValue={value}
         min="1"
         max="15"
       ></input>
