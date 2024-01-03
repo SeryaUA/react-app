@@ -62,14 +62,14 @@ import { Breeds, ChangebreadNumbers } from "./Changebread";
 
 const FetchData = () => {
   const [selectedBreed, setSelectedBreed] = useState(
-    "https://dog.ceo/api/breeds/image/random/3",
+    "https://dog.ceo/api/breeds/image/random/5"
   );
 
   const [valueBreed, setValueBreed] = useState("");
 
   const handleBreedChange = (value) => {
     setSelectedBreed(
-      `https://dog.ceo/api/breed/${value.toLowerCase()}/images/random/${breadNumber}`,
+      `https://dog.ceo/api/breed/${value.toLowerCase()}/images/random/${breadNumber}`
     );
     setValueBreed(value); // Оновлення значення породи
   };
@@ -96,7 +96,7 @@ const FetchData = () => {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-    },
+    }
   );
 
   if (error) return <div>failed to load</div>;
